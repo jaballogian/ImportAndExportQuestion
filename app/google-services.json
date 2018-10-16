@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "909797133767",
+    "firebase_url": "https://aplikasigalih.firebaseio.com",
+    "project_id": "aplikasigalih",
+    "storage_bucket": "aplikasigalih.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909797133767:android:5986cf1e712e85a7",
+        "android_client_info": {
+          "package_name": "jaballogian.importandexportquestion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909797133767-9is9f6g8mrm6dbmfdshnt4snosol70ei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jaballogian.importandexportquestion",
+            "certificate_hash": "f22decb99cdf8b99ede489e92bf756a7bd613b4f"
+          }
+        },
+        {
+          "client_id": "909797133767-m4ierdro09rpd8sp268ms3o9mvm8b5ne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_hSRvGZMnQ9_q8HDxzvEDn98hPa2XzyI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909797133767-m4ierdro09rpd8sp268ms3o9mvm8b5ne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
