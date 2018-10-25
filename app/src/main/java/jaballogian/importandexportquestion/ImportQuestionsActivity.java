@@ -25,7 +25,7 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class ImportQuestionsActivity extends AppCompatActivity {
 
-    private EditText insertQuestion, insertAnswerA, insertAnswerB, insertAnswerC, insertAnswerD, insertAnswerE, insertRightAnswer;
+    private EditText insertQuestion, insertAnswerA, insertAnswerB, insertAnswerC, insertAnswerD, insertAnswerE, description;
     private Button submit;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
@@ -49,6 +49,7 @@ public class ImportQuestionsActivity extends AppCompatActivity {
         insertAnswerE = (EditText) findViewById(R.id.answerEEditTextImportActivity);
         submit = (Button) findViewById(R.id.submitButtonImportActivity);
         radioGroup = (RadioGroup) findViewById(R.id.rigthAnswerRadioGroupImportActivity);
+        description = (EditText) findViewById(R.id.descriptionEditTextImportActivity);
 
         randomString = random();
 
@@ -69,14 +70,16 @@ public class ImportQuestionsActivity extends AppCompatActivity {
                 radioButton = (RadioButton) findViewById(radioID);
 
                 String rightAnswer = (String) radioButton.getText();
+                String descriptionAnswer = description.getText().toString();
 
-                if(question.isEmpty() || answerA.isEmpty() || answerB.isEmpty() || answerC.isEmpty() || answerD.isEmpty() || answerE.isEmpty() || rightAnswer.isEmpty()){
+                if(question.isEmpty() || answerA.isEmpty() || answerB.isEmpty() || answerC.isEmpty() || answerD.isEmpty() || answerE.isEmpty() || rightAnswer.isEmpty()
+                        || descriptionAnswer.isEmpty()){
 
                     Toast.makeText(ImportQuestionsActivity.this, "Please fill all the fields", Toast.LENGTH_LONG).show();
                 }
                 else{
 
-                    insertQuestionsToDatabase(question, answerA, answerB, answerC, answerD, answerE, rightAnswer);
+                    insertQuestionsToDatabase(question, answerA, answerB, answerC, answerD, answerE, rightAnswer, descriptionAnswer);
 
                     inserting.setTitle("Inserting data");
                     inserting.setMessage("Please wait");
@@ -88,7 +91,8 @@ public class ImportQuestionsActivity extends AppCompatActivity {
 
     }
 
-    private void insertQuestionsToDatabase(final String question, final String answerA, final String answerB, final String answerC, final String answerD, final String answerE, final String rightAnswer) {
+    private void insertQuestionsToDatabase(final String question, final String answerA, final String answerB, final String answerC, final String answerD, final String answerE,
+                                           final String rightAnswer, final String descriptionAnswer) {
 
         databaseQuestions = FirebaseDatabase.getInstance().getReference().child("List of Questions").child(randomString);
         HashMap<String, String> dataOfQuestions = new HashMap<>();
@@ -99,6 +103,7 @@ public class ImportQuestionsActivity extends AppCompatActivity {
         dataOfQuestions.put("Answer D ", answerD);
         dataOfQuestions.put("Answer E ", answerE);
         dataOfQuestions.put("Right Answer ", rightAnswer);
+        dataOfQuestions.put("Description", descriptionAnswer);
 
         databaseQuestions.setValue(dataOfQuestions).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

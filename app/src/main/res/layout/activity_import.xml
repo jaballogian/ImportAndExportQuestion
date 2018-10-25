@@ -255,8 +255,24 @@
 
             <TextView
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Description"
+                android:textColor="@color/gray600"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/descriptionEditTextImportActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insert the description here"
+                android:layout_margin="10dp"
+                android:textColor="@color/gray600" />
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:text="" />
+                android:text=""/>
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
