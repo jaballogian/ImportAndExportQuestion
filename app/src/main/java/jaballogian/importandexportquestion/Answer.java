@@ -4,7 +4,7 @@ public class Answer {
 
     private String answerA, answerB, answerC, answerD, answerE, questions, rightAnswer, description;
 
-    public Answer() {
+    Answer() {
     }
 
     public Answer(String answerA, String answerB, String answerC, String answerD, String answerE, String questions, String rightAnswer, String description) {
